@@ -1,0 +1,182 @@
+.privacy-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  width: 100%;
+}
+
+.privacy-header-section {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.privacy-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: var(--text-h);
+  margin-bottom: 12px;
+}
+
+.privacy-subtitle {
+  font-size: 16px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.privacy-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .privacy-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* Sticky Navigation Sidebar */
+.privacy-sidebar {
+  position: sticky;
+  top: 90px;
+  background-color: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 968px) {
+  .privacy-sidebar {
+    position: static;
+  }
+}
+
+.privacy-sidebar h4 {
+  font-size: 14px;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: var(--text-h);
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+
+.privacy-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.privacy-nav-item a {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  padding: 6px 10px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.privacy-nav-item a:hover {
+  color: var(--accent);
+  background-color: var(--accent-bg);
+}
+
+/* Content Panel */
+.privacy-content-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.privacy-section-card {
+  background-color: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 100px; /* Highlights section when navigated via anchor links */
+}
+
+.privacy-section-card h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.privacy-section-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-main);
+  margin-bottom: 16px;
+}
+
+.privacy-section-card p:last-child {
+  margin-bottom: 0;
+}
+
+.privacy-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.privacy-list li {
+  font-size: 14px;
+  color: var(--text-main);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.privacy-list li::before {
+  content: "•";
+  color: var(--accent);
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.contact-card-box {
+  background-color: var(--accent-bg);
+  border: 1px dashed var(--accent-border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.contact-detail-item a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.contact-detail-item a:hover {
+  text-decoration: underline;
+}

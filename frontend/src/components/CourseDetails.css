@@ -1,0 +1,750 @@
+/* Course Page Layout */
+.course-page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  width: 100%;
+}
+
+.course-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+}
+
+.course-back-btn:hover {
+  color: var(--accent);
+}
+
+.course-split-layout {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .course-split-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* LEFT SIDE - Preview Mode */
+.course-preview-left {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.course-header-section h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: var(--text-h);
+}
+
+.course-meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.meta-pill {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--border);
+  color: var(--text-main);
+}
+
+.meta-pill.difficulty {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+}
+
+.meta-pill.category {
+  background-color: rgba(234, 88, 12, 0.1);
+  color: #ea580c;
+}
+
+.course-description-card {
+  background-color: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.course-description-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.course-description-card p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-main);
+}
+
+/* RIGHT SIDE - Preview Mode Sticky Card */
+.course-preview-right-card {
+  background-color: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.course-preview-img-wrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.course-preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.course-preview-right-card:hover .course-preview-img {
+  transform: scale(1.02);
+}
+
+.price-tag {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-h);
+}
+
+.course-quick-details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+}
+
+.detail-row span {
+  color: var(--text-muted);
+}
+
+.detail-row strong {
+  color: var(--text-h);
+}
+
+/* COURSE STRUCTURE ACCORDION */
+.structure-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: var(--text-h);
+}
+
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-group {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--social-bg);
+  box-shadow: var(--shadow);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--social-bg);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+  background-color: var(--background);
+}
+
+.accordion-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.accordion-arrow {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform 0.2s ease;
+}
+
+.accordion-header-right {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.accordion-content {
+  border-top: 1px solid var(--border);
+  background-color: var(--background);
+  transition: max-height 0.3s ease-out;
+}
+
+.lecture-list {
+  list-style: none;
+}
+
+.lecture-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.lecture-item:last-child {
+  border-bottom: none;
+}
+
+.lecture-item.active {
+  background-color: var(--accent-bg);
+  border-left: 4px solid var(--accent);
+}
+
+.lecture-item-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.lecture-item.active .lecture-item-left {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.lecture-play-icon {
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.lecture-item.active .lecture-play-icon {
+  color: var(--accent);
+}
+
+.lecture-item-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.lecture-watch-link {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.lecture-watch-link:hover {
+  text-decoration: underline;
+}
+
+.lecture-duration {
+  font-size: 13px;
+  color: var(--text-muted);
+  min-width: 75px;
+  text-align: right;
+}
+
+/* RATING STARS COMPONENT */
+.rating-section {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.rating-stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #cbd5e1;
+  padding: 0;
+  transition: transform 0.1s ease, color 0.1s ease;
+}
+
+.star-btn:hover {
+  transform: scale(1.2);
+}
+
+.star-btn.filled {
+  color: #eab308;
+}
+
+/* COURSE PLAYER MODE (Enrolled layout) */
+.course-player-layout {
+  display: grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 32px;
+}
+
+@media (max-width: 968px) {
+  .course-player-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.player-left-col {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.player-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* VIDEO PLAYER WRAPPER */
+.video-player-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  background-color: #000000;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.video-thumbnail-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+}
+
+.video-play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgba(0,0,0,0.25);
+  transition: background-color 0.3s ease;
+}
+
+.video-play-overlay:hover {
+  background-color: rgba(0,0,0,0.15);
+}
+
+/* Simulated YouTube Play Button */
+.youtube-play-btn {
+  width: 68px;
+  height: 48px;
+  background-color: rgba(33, 33, 33, 0.8);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s ease;
+}
+
+.video-play-overlay:hover .youtube-play-btn {
+  background-color: #ff0000;
+  transform: scale(1.08);
+}
+
+.youtube-play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 18px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+.player-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 4px;
+}
+
+.lecture-title-display {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-h);
+}
+
+.mark-complete-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  transition: opacity 0.2s ease;
+  text-decoration: underline;
+}
+
+.mark-complete-btn:hover {
+  opacity: 0.8;
+}
+
+.mark-complete-btn:disabled {
+  color: #10b981;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+/* Enrollment Form Modal Styles */
+.enroll-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  animation: fadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.enroll-modal-container {
+  background-color: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  padding: 32px;
+  position: relative;
+  animation: slideUp 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.enroll-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.enroll-modal-close:hover {
+  background-color: var(--accent-bg);
+  color: var(--accent);
+}
+
+.enroll-modal-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.enroll-modal-subtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.enroll-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.enroll-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.enroll-form-group label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.enroll-input-field {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background-color: var(--background);
+  color: var(--text-main);
+  outline: none;
+  transition: all 0.25s;
+}
+
+.enroll-input-field:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.enroll-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.enroll-submit-btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ── Udemy-style enrolled layout (curriculum LEFT, video RIGHT) ── */
+.course-player-layout--udemy {
+  grid-template-columns: 0.75fr 1.25fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 968px) {
+  .course-player-layout--udemy {
+    grid-template-columns: 1fr;
+  }
+}
+
+.player-left-col--curriculum {
+  position: sticky;
+  top: 92px;
+  max-height: calc(100vh - 110px);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-right: 4px;
+}
+
+.player-left-col--curriculum::-webkit-scrollbar {
+  width: 4px;
+}
+.player-left-col--curriculum::-webkit-scrollbar-track {
+  background: transparent;
+}
+.player-left-col--curriculum::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 4px;
+}
+
+@media (max-width: 968px) {
+  .player-left-col--curriculum {
+    position: static;
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+.player-right-col--video {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Progress Card ─────────────────────────────────────────────── */
+.cd-progress-card {
+  background: linear-gradient(135deg, var(--accent-bg) 0%, var(--social-bg) 100%);
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cd-progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cd-progress-title {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.cd-progress-pct {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+.cd-progress-bar-track {
+  width: 100%;
+  height: 8px;
+  background-color: var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.cd-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent) 0%, #7c3aed 100%);
+  border-radius: 4px;
+  transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cd-progress-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ── Free Badge ─────────────────────────────────────────────────── */
+.cd-free-badge {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #059669;
+  background-color: rgba(5, 150, 105, 0.12);
+  border: 1px solid rgba(5, 150, 105, 0.3);
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Loading Lectures ────────────────────────────────────────────── */
+.cd-loading-lectures {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--social-bg);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ── Toast Notification ─────────────────────────────────────────── */
+.cd-toast {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  max-width: 360px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: toastSlideIn 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  border-left: 4px solid transparent;
+  backdrop-filter: blur(8px);
+}
+
+.cd-toast--success {
+  background-color: rgba(16, 185, 129, 0.95);
+  color: #ffffff;
+  border-left-color: #047857;
+}
+
+.cd-toast--error {
+  background-color: rgba(239, 68, 68, 0.95);
+  color: #ffffff;
+  border-left-color: #b91c1c;
+}
+
+.cd-toast--info {
+  background-color: rgba(59, 130, 246, 0.95);
+  color: #ffffff;
+  border-left-color: #1d4ed8;
+}
+
+@keyframes toastSlideIn {
+  from {
+    transform: translateX(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+

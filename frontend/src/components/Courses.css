@@ -1,0 +1,12 @@
+/*
+ * Courses.css — Page-specific overrides.
+ * Core card & grid styles are defined in App.css.
+ * This file only handles layout sizing unique to the catalog page.
+ */
+
+.courses-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  width: 100%;
+}

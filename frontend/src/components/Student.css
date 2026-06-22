@@ -1,0 +1,77 @@
+/* Student Dashboard Styles */
+.student-header {
+  background: linear-gradient(135deg, var(--navbar-bg) 0%, #1e293b 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.student-header h1 {
+  color: #ffffff;
+  font-size: 32px;
+  margin: 12px 0 8px 0;
+}
+
+.student-header p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 16px;
+  margin: 0;
+}
+
+.progress-item-card {
+  cursor: pointer;
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--social-bg);
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.progress-item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+  border-color: var(--accent-border);
+}
+
+.progress-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-h);
+  margin-bottom: 8px;
+}
+
+.progress-bar-track {
+  height: 8px;
+  background-color: var(--background);
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background-color: var(--accent);
+  border-radius: 4px;
+  transition: width 0.5s ease-out;
+}
+
+.enrollment-stats-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.empty-enrollments-msg {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  text-align: center;
+  padding: 24px 0;
+}
