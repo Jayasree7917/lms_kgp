@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import API from '../utils/api'; // Or wherever your custom api setup file is
 import { useNavigate, useLocation } from 'react-router-dom';
 import logoImg from '../assets/logo_lms.png';
 import './Auth.css';
@@ -49,24 +50,17 @@ export default function Auth({ setCurrentUser }) {
     setLoadingMsg(isLogin ? 'Logging in...' : 'Creating your account...');
 
     try {
-      const endpoint = isLogin ? '/api/v1/auth/login' : '/api/v1/auth/register';
+      // 1. Remove /api/v1 from the endpoint since your API baseURL already includes it
+      const endpoint = isLogin ? '/auth/login' : '/auth/register';
       const body = isLogin
         ? { email: formData.email.toLowerCase().trim(), password: formData.password }
         : { name: formData.name, email: formData.email.toLowerCase().trim(), password: formData.password };
 
-      const response = await fetch(`http://localhost:5000${endpoint}`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        setIsLoading(false);
-        alert(data.message || 'Authentication failed. Please try again.');
-        return;
-      }
+      // 2. Use your custom API instance instead of hardcoded fetch
+      const response = await API.post(endpoint, body);
+      
+      // Axios automatically parses JSON and places it inside response.data
+      const data = response.data; 
 
       // Store JWT token for future API calls
       localStorage.setItem('kgp_token', data.token);
@@ -94,9 +88,11 @@ export default function Auth({ setCurrentUser }) {
     } catch (err) {
       setIsLoading(false);
       console.error('Auth error:', err);
-      alert('Network error. Please ensure the backend server is running.');
+      
+      // If the server sent a specific error message back, show it
+      const errorMessage = err.response?.data?.message || 'Network error. Please ensure the backend server is running.';
+      alert(errorMessage);
     }
-  };
 
   // ── Social Login (localStorage-simulated — no OAuth backend) ─────────────
 
