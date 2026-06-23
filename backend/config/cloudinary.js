@@ -1,9 +1,9 @@
 const cloudinary = require('cloudinary').v2;
 
 cloudinary.config({
-  cloud_name: dde4z4jkx,
-  api_key: 761715482974473,
-  api_secret: dc9-oiN_rY4oh7csZtvDlCF34e4,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
   secure: true, // Always use HTTPS for asset URLs
 });
 
