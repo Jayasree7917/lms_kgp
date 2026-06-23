@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1',
+  baseURL: import.meta.env.VITE_API_URL || 'https://bookish-chainsaw-q77w9gx5pvg9f4xqx-5000.app.github.dev/api/v1',
   timeout: 10000,
 });
 
